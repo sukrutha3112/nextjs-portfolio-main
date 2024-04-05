@@ -3,6 +3,7 @@ import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
 import { Link } from "@mui/material";
+import { Dropdown } from "bootstrap";
 
 const TABS = [
   {
@@ -54,14 +55,14 @@ const Experience = () => {
   };
 
   return (
-    <section className="text-white" id="about">
+    <section className="text-white" id="experience">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         {/* <Image src="/images/about-image.png" width={500} height={500} /> */}
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">My Experience</h2>
           
           <h5 className="text-2xl font-bold text-white mb-4">State Street Corperation</h5>
-          <h6 className="text-xl font-bold text-white mb-4">Software Engineering Intern</h6>
+          <h6 className="text-xl font-bold text-white mb-4"><TabButton active={true}>Software Engineering Intern</TabButton></h6>
           <p className="text-base lg:text-lg">
           • Implemented test cases using JUnit testing and Cypress for frontend testing.<br/>
 • Improved code coverage by 25% of the project by optimizing the code enhancing overall application performance
@@ -87,7 +88,7 @@ bought into the company usage for local development and deployments.
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <br/><br/>
           <h5 className="text-2xl font-bold text-white mb-4">State Street Corperation</h5>
-          <h6 className="text-xl font-bold text-white mb-4">Software Developer 2</h6>
+          <h6 className="text-xl font-bold text-white mb-4"><TabButton active={true}>Software Developer 2</TabButton></h6>
           <p className="text-base lg:text-lg">
           •  Engineered and put into action adaptive user interfaces(UI) from scratch by means of React.js, Typescript, SCSS and
 Material UI in a large-scale initiative. Making the efficiency increase of creating applications in the company 20% and
