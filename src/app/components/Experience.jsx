@@ -3,7 +3,6 @@ import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
 import { Link } from "@mui/material";
-import { Dropdown } from "bootstrap";
 
 const TABS = [
   {

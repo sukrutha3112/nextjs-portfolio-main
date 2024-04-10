@@ -2,8 +2,12 @@
 import React, { useState } from "react";
 import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
+import EmailIcon from "../../../public/email.svg";
 import Link from "next/link";
 import Image from "next/image";
+// import { Resend } from "resend";
+
+// const resend = new Resend('re_jYTwRqhY_LCX5q3JJNVf1JTEdy2W4d9F5');
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -32,12 +36,23 @@ const EmailSection = () => {
 
     const response = await fetch(endpoint, options);
     const resData = await response.json();
+    console.log('resData',data.email)
 
+
+    // await resend.emails.send({
+    //   from: data.email,
+    //   to: 'sukruthashantharaj@gmail.com',
+    //   subject: data.subject,
+    //   html: data.message,
+    //   mode: 'no-cors',
+
+    // });
     if (response.status === 200) {
       console.log("Message sent.");
       setEmailSubmitted(true);
     }
   };
+
 
   return (
     <section
@@ -56,13 +71,15 @@ const EmailSection = () => {
           try my best to get back to you!
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link href="github.com">
+          <Link href="https://github.com/sukrutha3112?tab=repositories" target="_blank">
             <Image src={GithubIcon} alt="Github Icon" />
           </Link>
-          <Link href="linkedin.com">
+          <Link href="https://www.linkedin.com/in/sukrutha-shantharaj/" target="_blank">
             <Image src={LinkedinIcon} alt="Linkedin Icon" />
-          </Link>
+          </Link><br/>
         </div>
+        <br/>
+          <a href="sukruthashantharaj@gmail.com">sukruthashantharaj@gmail.com</a>
       </div>
       <div>
         {emailSubmitted ? (
@@ -84,7 +101,7 @@ const EmailSection = () => {
                 id="email"
                 required
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="jacob@google.com"
+                placeholder="abc@google.com"
               />
             </div>
             <div className="mb-6">

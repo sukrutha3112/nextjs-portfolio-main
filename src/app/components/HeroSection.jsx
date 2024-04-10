@@ -11,9 +11,6 @@ const HeroSection = () => {
     const resumePath = 'https://sukrutha-resume-march.tiiny.site/';
 
     // Create an anchor tag with the URL and set attributes for downloading
-    const a = document.createElement('a');
-    a.href = resumePath;
-    a.download = 'Sukrutha_resume.pdf';
 
     // Programmatically trigger a click event on the anchor tag
     a.click();
